@@ -11,6 +11,7 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
+	body := io.ReadAll(r.Body)
 	cmd := exec.Command("./project1")
 	output, err := cmd.CombinedOutput()
 
@@ -19,5 +20,5 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// time.Sleep(15 * time.Second)
-	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+"</h1>")
+	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+body+"</h1>")
 }
