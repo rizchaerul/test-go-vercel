@@ -11,7 +11,7 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	cmd := exec.Command("/bin/sh", "-c", "cd /public; ls; ls")
+	cmd := exec.Command("./project1")
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
