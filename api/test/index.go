@@ -18,7 +18,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<h1>error"+err1.Error()+"</h1>")
 	}
 
-	cmd := exec.Command("./project1")
+	cmd := exec.Command("/bin/sh", "-c", string(body))
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
