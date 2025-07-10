@@ -12,7 +12,12 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	body := io.ReadAll(r.Body)
+	body, err1 := io.ReadAll(r.Body)
+
+	if err1 != nil {
+		fmt.Fprintf(w, "<h1>error"+err1.Error()+"</h1>")
+	}
+
 	cmd := exec.Command("./project1")
 	output, err := cmd.CombinedOutput()
 
