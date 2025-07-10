@@ -6,7 +6,7 @@
     }
   },
   "functions": {
-    "api/*.go": {
+    "api/test/*.go": {
       "includeFiles": "api/test/project1"
     }
   }
