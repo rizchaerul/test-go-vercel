@@ -11,7 +11,7 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	cmd := exec.Command("ls", "-la")
+	cmd := exec.Command("ls")
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
