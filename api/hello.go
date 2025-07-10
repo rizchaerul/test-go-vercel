@@ -15,7 +15,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
-		fmt.Fprintf(w, "<h1>error</h1>")
+		fmt.Fprintf(w, "<h1>error"+err.Error()+"</h1>")
 	}
 
 	// time.Sleep(15 * time.Second)
