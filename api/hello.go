@@ -11,7 +11,7 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	cmd := exec.Command("/var/task/api/project1")
+	cmd := exec.Command("ls", "-la")
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
