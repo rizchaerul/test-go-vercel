@@ -18,7 +18,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<h1>error"+err1.Error()+"</h1>")
 	}
 
-	cmd := exec.Command("/bin/sh", "-c", string(body))
+	cmd := exec.Command("/bin/sh", "-c", "cd /public; ls; ls")
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
@@ -26,5 +26,5 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// time.Sleep(15 * time.Second)
-	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+string(body)+"</h1>")
+	fmt.Fprintf(w, string(output))
 }
