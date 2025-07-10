@@ -26,5 +26,5 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// time.Sleep(15 * time.Second)
-	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+body+"</h1>")
+	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+string(body)+"</h1>")
 }
