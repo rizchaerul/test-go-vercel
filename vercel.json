@@ -4,5 +4,10 @@
     "env": {
       "GO_BUILD_FLAGS": "-ldflags '-s -w'"
     }
+  },
+  "functions": {
+    "api/*.go": {
+      "includeFiles": "api/test/project1"
+    }
   }
 }
