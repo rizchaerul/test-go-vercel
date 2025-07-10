@@ -3,7 +3,7 @@ package handler
 import (
 	"fmt"
 	"net/http"
-	"time"
+	"os/exec"
 )
 
 // func main() {
@@ -11,6 +11,13 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(15 * time.Second)
-	fmt.Fprintf(w, "<h1>Hello from Go! m luthfi jasir</h1>")
+	cmd := exec.Command("./project1")
+	output, err := cmd.CombinedOutput()
+
+	if err != nil {
+		fmt.Fprintf(w, "<h1>error</h1>")
+	}
+
+	// time.Sleep(15 * time.Second)
+	fmt.Fprintf(w, "<h1>Hello from Go!"+string(output)+"</h1>")
 }
