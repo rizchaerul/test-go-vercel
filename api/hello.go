@@ -11,7 +11,7 @@ import (
 // }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	cmd := exec.Command("/bin/sh", "-c", "ls; ls; ls")
+	cmd := exec.Command("/bin/sh", "-c", "cd bootstrap; ls; ls")
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
